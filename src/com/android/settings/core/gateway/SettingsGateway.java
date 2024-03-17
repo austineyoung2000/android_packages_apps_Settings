@@ -198,6 +198,10 @@ import com.crdroid.settings.fragments.ui.SmartPixels;
 
 import con.android.settings.wifi.tether.WifiTetherClientManager;
 
+import com.crdroid.settings.fragments.LockScreen;
+import com.crdroid.settings.fragments.Themes;
+import com.crdroid.settings.fragments.Toolbox;
+
 public class SettingsGateway {
 
     /**
@@ -382,6 +386,9 @@ public class SettingsGateway {
             RunningServices.class.getName(),
             SmartPixels.class.getName(),
             WifiTetherClientManager.class.getName(),
+            LockScreen.class.getName(),
+            Themes.class.getName(),
+            Toolbox.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -431,5 +438,8 @@ public class SettingsGateway {
             Settings.crDroidSettingsLayoutActivity.class.getName(),
             Settings.DevRunningServicesActivity.class.getName(),
             Settings.SmartPixelsActivity.class.getName(),
+            Settings.PersonalizationsLockscreenActivity.class.getName(),
+            Settings.PersonalizationsToolboxActivity.class.getName(),
+            Settings.PersonalizationsThemesActivity.class.getName()
     };
 }
