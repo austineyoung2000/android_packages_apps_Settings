@@ -247,4 +247,12 @@
     <string name="lockscreen_display_timeout_5m">5 minutes</string>
     <string name="lockscreen_display_timeout_10m">10 minutes</string>
     <string name="lockscreen_display_timeout_30m">30 minutes</string>
+
+    <!-- Volume Steps -->
+    <string name="volume_steps_title">Volume Steps</string>
+    <string name="volume_steps_summary">Control the granularity of each stream</string>
+    <string name="max_music_volume_title">Media</string>
+    <string name="max_call_volume_title">Calls</string>
+    <string name="max_alarm_volume_title">Alarms</string>
+    <string name="steps_unit">steps</string>
 </resources>
