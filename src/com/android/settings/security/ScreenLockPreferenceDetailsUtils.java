@@ -195,7 +195,9 @@ public class ScreenLockPreferenceDetailsUtils {
                     return R.string.unlock_set_unlock_mode_pattern;
                 case DevicePolicyManager.PASSWORD_QUALITY_NUMERIC:
                 case DevicePolicyManager.PASSWORD_QUALITY_NUMERIC_COMPLEX:
-                    return R.string.unlock_set_unlock_mode_pin;
+                    return mLockPatternUtils.isKnockCodeEnabled(userId)
+                            ? R.string.unlock_set_unlock_knock_code_title
+                            : R.string.unlock_set_unlock_mode_pin;
                 case DevicePolicyManager.PASSWORD_QUALITY_ALPHABETIC:
                 case DevicePolicyManager.PASSWORD_QUALITY_ALPHANUMERIC:
                 case DevicePolicyManager.PASSWORD_QUALITY_COMPLEX:

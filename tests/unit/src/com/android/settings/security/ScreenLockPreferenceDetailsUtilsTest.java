@@ -187,6 +187,28 @@ public class ScreenLockPreferenceDetailsUtilsTest {
     }
 
     @Test
+    public void getSummary_knockCodeNumeric_shouldReturnKnockCode() {
+        final String summary = prepareString("unlock_set_unlock_knock_code_title", "Knock Code");
+        when(mLockPatternUtils.isSecure(USER_ID)).thenReturn(true);
+        when(mLockPatternUtils.getKeyguardStoredPasswordQuality(USER_ID))
+                .thenReturn(DevicePolicyManager.PASSWORD_QUALITY_NUMERIC);
+        when(mLockPatternUtils.isKnockCodeEnabled(USER_ID)).thenReturn(true);
+
+        assertThat(mScreenLockPreferenceDetailsUtils.getSummary(USER_ID)).isEqualTo(summary);
+    }
+
+    @Test
+    public void getSummary_knockCodeNumericComplex_shouldReturnKnockCode() {
+        final String summary = prepareString("unlock_set_unlock_knock_code_title", "Knock Code");
+        when(mLockPatternUtils.isSecure(USER_ID)).thenReturn(true);
+        when(mLockPatternUtils.getKeyguardStoredPasswordQuality(USER_ID))
+                .thenReturn(DevicePolicyManager.PASSWORD_QUALITY_NUMERIC_COMPLEX);
+        when(mLockPatternUtils.isKnockCodeEnabled(USER_ID)).thenReturn(true);
+
+        assertThat(mScreenLockPreferenceDetailsUtils.getSummary(USER_ID)).isEqualTo(summary);
+    }
+
+    @Test
     public void getSummary_passwordQualityNumericComplex_shouldUnlockModePin() {
         final String summary = prepareString("unlock_set_unlock_mode_pin", "unlockModePin");
 
